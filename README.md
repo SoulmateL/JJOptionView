@@ -1,6 +1,7 @@
 # JJOptionView
 自己封装了一个简单的下拉列表控件
 
+![CarouselView in action](picture.gif)
 
 iOS封装的下拉列表控件，会自动识别向上向下展开
 
@@ -19,7 +20,7 @@ view1.dataSource = @[@"1",@"2",@"3",@"4",@"5"];
 view1.delegate = self;
 [self.view addSubview:view1];
 ```
-/Users/Soulmate/Desktop/JJOptionView/Sep-20-2018 14-28-26.gif
+
 
 
 
