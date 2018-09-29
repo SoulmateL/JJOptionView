@@ -1,10 +1,10 @@
 # JJOptionView
-自己封装了一个简单的下拉列表控件
+自己封装了一个简单的下拉列表控件以及搜索下拉框
 
 ![CarouselView in action](picture.gif)
 ![CarouselView in action](search.gif)
 
-iOS封装的下拉列表控件，会自动识别向上向下展开
+iOS 封装的下拉列表控件,搜索下拉框，会自动识别向上向下展开
 
 ```
 JJOptionView *view = [[JJOptionView alloc] initWithFrame:CGRectMake(100, 700, 200, 40)];
