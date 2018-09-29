@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JJOptionView/JJOptionView.h"
+#import "SecondViewController.h"
 @interface ViewController ()<JJOptionViewDelegate>
 
 @end
@@ -16,21 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
-//    UIView *a = [[UIView alloc] initWithFrame:CGRectMake(20,500 , 100, 1)];
-//    a.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:a];
-//
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [UIView animateWithDuration:1 animations:^{
-//            a.frame = CGRectMake(20, 200, 100, 300);
-//        }];
-//    });
     
-    
-    
-    
-    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(100, 100, 100, 30);
+    [button addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"搜索" forState:UIControlStateNormal];
+    [self.view addSubview:button];
+
     JJOptionView *view = [[JJOptionView alloc] initWithFrame:CGRectMake(100, 700, 200, 40)];
     view.dataSource = @[@"111",@"222",@"333",@"444",@"555"];
     view.selectedBlock = ^(JJOptionView * _Nonnull optionView, NSInteger selectedIndex) {
@@ -47,6 +40,10 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)next {
+    SecondViewController *vc = [SecondViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)optionView:(JJOptionView *)optionView selectedIndex:(NSInteger)selectedIndex {
     NSLog(@"%@",optionView);
